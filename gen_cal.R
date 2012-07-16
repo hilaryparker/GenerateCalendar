@@ -24,9 +24,16 @@
 #	lab_location<-"W3031"
 
 
-
-
-gen_cal<-function(wd, ta_names, start_date, end_date, no_TA_dates, lab=TRUE, ta_location=c(), lab_location=c(), double_days=c()){
+gen_cal<-function(wd,
+				  ta_names,
+				  start_date,
+				  end_date,
+				  no_TA_dates,
+				  lab=TRUE,
+				  ta_location=c(),
+				  lab_location=c(),
+				  double_days=c()
+				  ){
 	setwd(wd)
 	library(chron)
 
@@ -89,37 +96,4 @@ gen_cal<-function(wd, ta_names, start_date, end_date, no_TA_dates, lab=TRUE, ta_
 		temp<-mat[mat$Subject==ta_names[i],]
 		write.csv(temp,file=filename,quote=FALSE,row.names=FALSE)
 	}
-
 }
-
-#gen_cal("/Users/hilaryp08/Desktop", c("finbarr","sarah","yi","yifei"), "09/01/11", "10/15/11", lab=FALSE, ta_location="W3031", double_days=c("09/10/11","09/11/11"))
-
-   
-	       
-
-set.seed(12345)
-nms<-c("Sun Eun", "Paige", "Tom", "Rinda", "Elizabeth", "Shu-Yi", "Yenny", "Sherlly", "Jingyan",
-	   "Ah Young", "Johnny", "Katherine",  "Seung Hee", "Juemin", "Yifei")
-
-gen_cal("C:/Users/Hilary/Desktop",
-		ta_names=nms, 
-		start_date="01/25/12", 
-		end_date="03/14/12",
-		no_TA_dates=c("02/21/12","02/22/12"),
-		lab=FALSE, 
-		ta_location="TA Office Hour = W2021; STATA Office Hour = W3025", 
-		lab_location=c(), 
-		double_days=c("02/06/12","02/10/12","02/15/12","02/20/12","02/29/12",
-					  "03/05/12","03/12/12","03/14/12"
-					  )
-		)
-
-		#	ta_names<-c("Hilary","Kirsten","Marie")
-#	start_date="09/22/11"
-#	end_date="10/1/11"
-#	no_TA_dates=c("09/23/11","09/29/11")
-#	double_days=c("09/22/11","09/30/11")
-#	ta_location<-"TA Office Hour = W2021; STATA Office Hour = W3025"
-#	lab_location<-"W3031"
-
-	
